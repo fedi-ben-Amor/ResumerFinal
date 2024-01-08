@@ -1,0 +1,11 @@
+<h1> Liste Annonces </h1>
+<div *ngFor="let annonce of annonces">
+ 
+    <div *ngIf="annonce.etat !== 'annulé'" [ngStyle]="{'background-color': annonce.etat === 'confirmé' ? 'green' : annonce.etat === 'en attente' ? 'orange' : ''}">
+        <h4>{{annonce.titre}}</h4>
+        <p>{{annonce.description}} {{annonce.etat}} {{annonce.position}} </p>
+        <p>******************************************************</p>
+    </div>
+    
+
+</div>

@@ -1,0 +1,29 @@
+<h1> Liste Category</h1>
+<button (click)="GoToAddCategory()">Add Category</button>
+<br><br>
+<app-add-category *ngIf="showAddCategory==true" (addCategory)="onCategoryAdded($event)"></app-add-category>
+
+<table border="2px solid black"> 
+    <tr> 
+        <td>id</td>
+        <td>name</td>
+        <td>nbre</td>
+        <td>delete</td>
+        <td>update</td>
+        <td>details</td>
+    </tr>
+    <tr *ngFor="let category of categorys"> 
+        <td>{{category.id}}</td>
+        <td>{{category.name}}</td>
+        <td>{{category.nbproduct}}</td>
+        <td><button (click)="deleteCategory(category.id)">delete</button></td>
+        <td><button (click)="goToUpdateCategory(category)">update</button></td>
+        <td><!--<button (click)="goToDetailsProduct(product.id)">details</button>--> 
+            <a [routerLink]="'/category/detail/' + category.id">details</a></td>
+    </tr>
+
+</table>
+
+<div *ngIf="showUpdateCategory">
+    <app-update-category [category]="categorytoSelected" (notif)="traitemenet($event)" (updateCategory)="changeTab($event)"></app-update-category>
+</div>

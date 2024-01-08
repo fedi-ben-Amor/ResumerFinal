@@ -1,0 +1,21 @@
+<p>estimation-cout works!</p>
+<form  [formGroup]="EstimationForm"> 
+    <p> Pour estimer le cout de votre annince veuillez saisir la position soulaitée 
+        de votre annince (haut ,bas) et le nombre de caractéres de la description 
+    </p>
+    <label for="position"> Position </label>
+    <select formControlName="position"> 
+        <option></option>
+        <option>haut</option>
+        <option>bas</option>
+    </select> <br>
+    <span *ngIf="EstimationForm.get('position')?.errors?.['required']" style="color:red">position is Required </span><br>
+    <label> Nombre de caractére </label>
+    <input formControlName="nombreC" type="number"><br>
+    <span *ngIf="EstimationForm.get('nombreC')?.errors?.['required']" style="color:red">nombreC is Required </span><br>
+    <span *ngIf="EstimationForm.get('nombreC')?.errors?.['max']" style="color:red">nombreC max 60 </span><br>
+    <button type="submit"  [disabled]="EstimationForm.invalid" (click)="Calcul()"> Estimer </button>
+</form>
+<div *ngIf="show">
+    le Cout de votre activle est a {{cout}} DT.
+</div>

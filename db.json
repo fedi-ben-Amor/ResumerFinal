@@ -1,0 +1,57 @@
+{
+  "product": [
+    {
+      "name": "json-server",
+      "description": "typicode",
+      "price": 1500,
+      "qte": 30,
+      "category": 1,
+      "id": 1
+    },
+    {
+      "name": "Pc Portable",
+      "description": "sqdsdq",
+      "price": 520,
+      "qte": 4,
+      "category": 1,
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "name": "some comment",
+      "nbproduct": "4",
+      "id": 1
+    },
+    {
+      "name": "Pc Portable",
+      "nbproduct": "2",
+      "id": 2
+    },
+    {
+      "name": "Pc Portable",
+      "nbproduct": "5",
+      "id": 3
+    },
+    {
+      "name": "Pc Portable",
+      "nbproduct": "9",
+      "id": 4
+    },
+    {
+      "name": "Pc Portable",
+      "nbproduct": "45",
+      "id": 5
+    },
+    {
+      "name": "some comment",
+      "nbproduct": "50",
+      "id": 6
+    },
+    {
+      "name": "some comment",
+      "nbproduct": "50",
+      "id": 7
+    }
+  ]
+}

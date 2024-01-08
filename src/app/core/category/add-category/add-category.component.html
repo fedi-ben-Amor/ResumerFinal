@@ -1,0 +1,25 @@
+
+<form #form="ngForm">
+    <label>name</label>
+    <input type="text" name="name" [(ngModel)]="category.name" required minlength="3" #namecategory="ngModel">
+    <span *ngIf="namecategory.invalid && namecategory.touched">
+<span *ngIf="namecategory.errors?.['required']">
+    required
+</span>
+<span *ngIf="namecategory.errors?.['minlength']">
+    minlength
+</span>
+    </span>
+    <br><br>
+    <label>nbproduct</label>
+            <input type="text" name="nbproduct" [(ngModel)]="category.nbproduct" pattern="[0-9]*" required #nbproduct="ngModel">
+    <span *ngIf="nbproduct.invalid && nbproduct.touched">
+        <span *ngIf="nbproduct.errors?.['pattern']">
+            pattern
+        </span>
+        <span *ngIf="nbproduct.errors?.['required']">
+            required
+        </span>
+        </span>
+    <input type="submit" value="add product" (click)="saveProduct(form.value)" >
+</form>

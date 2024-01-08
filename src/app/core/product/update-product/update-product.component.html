@@ -1,0 +1,44 @@
+<form [formGroup]="ProductForm">
+    <label for="name" >name</label>
+    <input type="text" class="form-control" id="name" formControlName="name" placeholder="product name">
+    <div class="err" *ngIf="ProductForm.get('name')?.invalid && (ProductForm.get('name')?.dirty || ProductForm.get('name')?.touched)">
+        <div *ngIf="ProductForm.get('name')?.errors?.['required']">Champ obligatoire</div>
+        <div *ngIf="ProductForm.get('name')?.errors?.['minlength']">mini 5 char</div>
+    </div>
+    <br>
+    <label for="description">description</label>
+    <input type="text" class="form-control" id="description" formControlName="description" placeholder="description product">
+    <div class="err" *ngIf="ProductForm.get('description')?.invalid && (ProductForm.get('description')?.dirty || ProductForm.get('description')?.touched)">
+        <div *ngIf="ProductForm.get('description')?.errors?.['required']">Champ obligatoire</div>
+        <div *ngIf="ProductForm.get('description')?.errors?.['minlength']">mini 5 char</div>
+        <div *ngIf="ProductForm.get('description')?.errors?.['maxlength']">max 10 char</div>
+    </div>
+    <br>
+    
+    <label for="price">price</label>
+    <input type="number" class="form-control" id="price" formControlName="price" placeholder="price product">
+    <div class="err" *ngIf="ProductForm.get('price')?.invalid && (ProductForm.get('price')?.dirty || ProductForm.get('price')?.touched)">
+        <div *ngIf="ProductForm.get('price')?.errors?.['required']">Champ obligatoire</div>
+        <div *ngIf="ProductForm.get('price')?.errors?.['pattern']">Seuls les chiffres sont acceptés</div>
+    
+    </div>
+    <br>
+    
+    <label for="qte">qte</label>
+    <input type="number" class="form-control" id="qte" formControlName="qte" placeholder="qte product">
+    <div class="err" *ngIf="ProductForm.get('qte')?.invalid && (ProductForm.get('qte')?.dirty || ProductForm.get('qte')?.touched)">
+        <div *ngIf="ProductForm.get('qte')?.errors?.['required']">Champ obligatoire</div>
+        <div *ngIf="ProductForm.get('qte')?.errors?.['pattern']">Seuls les chiffres sont acceptés</div>
+    
+    </div>
+    <br>
+    
+    <label for="category">category</label>
+    <input type="number" class="form-control" id="category" formControlName="category" placeholder="category product">
+    <div class="err" *ngIf="ProductForm.get('category')?.invalid && (ProductForm.get('category')?.dirty || ProductForm.get('category')?.touched)">
+        <div *ngIf="ProductForm.get('category')?.errors?.['required']">Champ obligatoire</div>
+       
+    </div>
+    <button type="submit" [disabled]="ProductForm.invalid" (click)="UpdateProduct()" >Save</button>
+    </form>
+    

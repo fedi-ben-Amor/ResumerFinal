@@ -1,0 +1,27 @@
+<h1> Liste Product </h1>
+<button (click)="goToAddProduct()">Add Product</button>
+<br><br>
+<table border="2px solid black"> 
+    <tr> 
+        <td>id</td>
+        <td>name</td>
+        <td>description</td>
+        <td>price</td>
+        <td>qte</td>
+        <td>delete</td>
+        <td>update</td>
+        <td>details</td>
+    </tr>
+    <tr *ngFor="let product of products"> 
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.qte}}</td>
+        <td><button (click)="deleteProduct(product.id)">delete</button></td>
+        <td><button (click)="goToUpdateProduct(product.id)">update</button></td>
+        <td><!--<button (click)="goToDetailsProduct(product.id)">details</button>--> 
+            <a [routerLink]="'/product/detail/' + product.id">details</a></td>
+    </tr>
+
+</table>

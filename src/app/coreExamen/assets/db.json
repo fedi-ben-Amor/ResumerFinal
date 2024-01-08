@@ -1,0 +1,39 @@
+{
+  "Annonce": [
+    {
+        "id": 1,
+        "titre": "string",
+        "description": "string",
+        "position": 1,
+        "etat": "annulé"
+    },
+    {
+      "id": 2,
+      "titre": "string",
+      "description": "string",
+      "position": 1,
+      "etat": "confirmé"
+  },
+    {
+      "id": 3,
+      "titre": "string",
+      "description": "string",
+      "position": 1,
+      "etat": "en attente"
+  },
+  {
+    "id": 4,
+    "titre": "string",
+    "description": "string",
+    "position": 1,
+    "etat": "en attente"
+},
+{
+  "id": 5,
+  "titre": "string",
+  "description": "string",
+  "position": 1,
+  "etat": "confirmé"
+}
+  ]
+}
